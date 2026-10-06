@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#0b0f12">
+  <meta name="description" content="A fast, private, offline-ready personal workout tracker.">
+  <title>Rep &amp; Road</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="./icon.svg">
+  <link rel="apple-touch-icon" href="./icon.svg">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow" id="dateLabel">TODAY</p>
+        <h1>Rep <span>&amp;</span> Road</h1>
+      </div>
+      <button id="installBtn" class="icon-btn" hidden aria-label="Install app" title="Install app">↓</button>
+    </header>
+
+    <main id="app" aria-live="polite">
+      <section id="todayView" class="view active" aria-labelledby="todayTab"></section>
+      <section id="weekView" class="view" aria-labelledby="weekTab"></section>
+      <section id="historyView" class="view" aria-labelledby="historyTab"></section>
+    </main>
+
+    <div id="restTimer" class="rest-timer" hidden></div>
+
+    <nav class="bottom-nav" aria-label="Main navigation">
+      <button id="todayTab" class="nav-item active" data-view="today" aria-current="page">
+        <span class="nav-icon" aria-hidden="true">●</span><span>Today</span>
+      </button>
+      <button id="weekTab" class="nav-item" data-view="week">
+        <span class="nav-icon" aria-hidden="true">▦</span><span>Week</span>
+      </button>
+      <button id="historyTab" class="nav-item" data-view="history">
+        <span class="nav-icon" aria-hidden="true">↺</span><span>History</span>
+      </button>
+    </nav>
+  </div>
+
+  <dialog id="chartDialog" class="chart-dialog">
+    <button class="dialog-close" aria-label="Close chart">×</button>
+    <div id="chartContent"></div>
+  </dialog>
+
+  <input id="importInput" type="file" accept="application/json" hidden>
+  <script src="./app.js"></script>
+</body>
+</html>
