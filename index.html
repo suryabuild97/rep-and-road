@@ -9,7 +9,7 @@
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" type="image/svg+xml" href="./icon.svg">
   <link rel="apple-touch-icon" href="./icon.svg">
-  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./styles.css?v=4">
 </head>
 <body>
   <div class="app-shell">
@@ -18,7 +18,10 @@
         <p class="eyebrow" id="dateLabel">TODAY</p>
         <h1>Rep <span>&amp;</span> Road</h1>
       </div>
-      <button id="installBtn" class="icon-btn" hidden aria-label="Install app" title="Install app">↓</button>
+      <div class="top-actions">
+        <button id="bodyweightChip" class="weight-chip" aria-label="Edit bodyweight">BW —</button>
+        <button id="installBtn" class="icon-btn" hidden aria-label="Install app" title="Install app">↓</button>
+      </div>
     </header>
 
     <main id="app" aria-live="polite">
@@ -42,12 +45,13 @@
     </nav>
   </div>
 
-  <dialog id="chartDialog" class="chart-dialog">
-    <button class="dialog-close" aria-label="Close chart">×</button>
-    <div id="chartContent"></div>
+  <dialog id="modalDialog" class="modal-dialog">
+    <button class="dialog-close" aria-label="Close">×</button>
+    <div id="modalContent"></div>
   </dialog>
 
   <input id="importInput" type="file" accept="application/json" hidden>
-  <script src="./app.js"></script>
+  <script src="./body-assets.js?v=4"></script>
+  <script src="./app.js?v=4"></script>
 </body>
 </html>
